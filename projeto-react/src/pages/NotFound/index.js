@@ -8,6 +8,8 @@ const NotFound = () => {
 
         <div id="wrapper">
             <ImageNotFound src='https://i.imgur.com/A040Lxr.png' />
+
+
             <div id="info">
                 <H1NotFound >Perdido no espaço?</H1NotFound>
                 <H3NotFound>Isso acontece com todos!
