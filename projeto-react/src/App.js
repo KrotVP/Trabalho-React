@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import {Context} from "./context/data";
 import {Login} from "./pages/Login";
 import {default as NotFound} from "./pages/NotFound";
-import{Home} from "./pages/Home";
+import{default as Home } from "./pages/Home";
 import{Categoria} from "./pages/Categoria";
 import {Endereco} from "./pages/Endereco";
 import {FuncionarioIndividual as Funcionario} from './pages/FuncionarioIndividual'

@@ -14,6 +14,9 @@ import { useHistory } from 'react-router-dom';
 import { useContext } from 'react';
 import { DataContext } from '../../context/data';
 
+import logo from '../Imagem/Ideias.png';
+
+
 
 
 
@@ -49,9 +52,9 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+    <AppBar position="static" style={{backgroundColor: "black"}}>
+      <Container maxWidth="xl" >
+        <Toolbar disableGutters >
           <Typography
             variant="h6"
             noWrap
@@ -67,7 +70,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            Adicionar logo aqui
+            <img src={logo} alt="Ideias" width="70%" />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -121,7 +124,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            <img src={logo} alt="Ideias" width="70%" align-item="center" />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
