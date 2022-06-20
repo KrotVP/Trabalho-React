@@ -23,4 +23,4 @@ const NotFound = () => {
     )
 }
 
-export default PageNotFound
+export default NotFound

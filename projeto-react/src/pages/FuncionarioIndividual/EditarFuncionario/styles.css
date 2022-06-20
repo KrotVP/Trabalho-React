@@ -1,0 +1,14 @@
+body{
+    max-width:100%;
+   
+}
+form{
+    max-width:100%;
+    margin: 0 auto;
+}
+input{
+    width: 96%;
+}
+.error-message{
+    color: red;
+}
