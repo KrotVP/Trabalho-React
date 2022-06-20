@@ -3,7 +3,7 @@ import NavBar from'../../components/Layout/Navbar'
 function Home(){
 return(
     <section >
-        
+       
         <div className={styles.home_1}>
         <h1>Sobre</h1>
 
