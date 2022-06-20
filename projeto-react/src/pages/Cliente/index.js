@@ -5,13 +5,14 @@ import Stack from '@mui/material/Stack';
 import { useState } from 'react';
 import './styles.css';
 import Botao from '../../components/Botao';
-import {CriarFuncionario} from './CriarFuncionario';
-import {EditarFuncionario} from './EditarFuncionario';
 import {useHistory} from 'react-router-dom';
+import {EditarCliente} from './EditarCliente';
 
-export const FuncionarioIndividual = (props) => {
+
+export const Cliente = (props) => {
   const history = useHistory();
-  const [funcionario, setFuncionario] = useState({
+
+  const [cliente, setcliente] = useState({
     nome: "aaaaaaaaaaa",
     cpf: "",
     telefone: "",
@@ -23,7 +24,7 @@ export const FuncionarioIndividual = (props) => {
 
 
 
-      <h2>Funcionário</h2>
+      <h2>Cliente</h2>
       <Box
         style={{
           border: "1px solid green",
@@ -46,7 +47,7 @@ export const FuncionarioIndividual = (props) => {
             color="success" focused
             label="Nome"
 
-            defaultValue={funcionario.nome}
+            defaultValue={cliente.nome}
             InputProps={{
               readOnly: true,
 
@@ -59,7 +60,7 @@ export const FuncionarioIndividual = (props) => {
             color="success" focused
             label="CPF"
 
-            defaultValue={funcionario.cpf}
+            defaultValue={cliente.cpf}
             InputProps={{
               readOnly: true,
 
@@ -71,7 +72,7 @@ export const FuncionarioIndividual = (props) => {
             color="success" focused
             label="Telefone"
 
-            defaultValue={funcionario.telefone}
+            defaultValue={cliente.telefone}
             InputProps={{
               readOnly: true,
 
@@ -85,7 +86,7 @@ export const FuncionarioIndividual = (props) => {
             id="outlined-read-only-input"
             color="success" focused
             label="Data de Nascimento"
-            defaultValue={funcionario.dataDeNascimento}
+            defaultValue={cliente.dataDeNascimento}
             InputProps={{
               readOnly: true,
             }}
@@ -96,12 +97,12 @@ export const FuncionarioIndividual = (props) => {
       </Box>
 
       <Stack spacing={5} direction="row">
-        <Botao nome="Deletar" color="error" onClick = {()=> history.push("/funcionario/lista")} ></Botao>
-       {/*  <Botao nome="Editar" color="warning" ></Botao>
-        <Botao nome="Criar" color="success" ></Botao> */}
+        <Botao nome="Deletar" color="error" ></Botao>
+        <Botao nome="Endereço" color="warning" onClick = {()=>history.push("/endereco",{text: cliente.nome})} 
+        ></Botao>
+            
       </Stack>
-        <CriarFuncionario/>
-        <EditarFuncionario/>
+       <EditarCliente/>
 
 
 
