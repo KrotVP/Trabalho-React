@@ -11,8 +11,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { useHistory } from 'react-router-dom';
-import { useContext } from 'react'; 
-import { DataContext } from '../../context';
+import { useContext } from 'react';
+import { DataContext } from '../../context/data';
 
 
 
@@ -23,10 +23,10 @@ import { DataContext } from '../../context';
 
 
 const ResponsiveAppBar = () => {
-  const {CPF} = useContext(DataContext)
-  const history=useHistory();
+  const { CPF } = useContext(DataContext)
+  const history = useHistory();
   const pages = ['Produto', 'Pedido', 'Categoria'];
-  const settings = [CPF, 'Login','Logout']; 
+  const settings = [CPF, 'Login', 'Logout'];
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -124,7 +124,7 @@ const ResponsiveAppBar = () => {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={()=> history.push(`/${page}`)}
+                onClick={() => history.push(`/${page}`)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
@@ -155,7 +155,7 @@ const ResponsiveAppBar = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={()=>history.push(`client/${setting}`)}>
+                <MenuItem key={setting} onClick={() => history.push(`client/${setting}`)}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

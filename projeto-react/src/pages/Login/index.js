@@ -1,9 +1,7 @@
 import { useEffect, useState, useContext } from "react"
 import { useHistory } from "react-router-dom"
-import { Botao } from "../../components"
 import { API } from "../../services/api"
 import jwt_decode from "jwt-decode";
-import ResponsiveAppBar from "../../components/NavBar";
 import { DataContext } from "../../context";
 
 export const Login = () => {
@@ -53,6 +51,6 @@ export const Login = () => {
         }
     }, [storeToken, storeCPF, storeRole])
     return (
-        <ResponsiveAppBar />
+        <h1>Oi</h1>
     )
 }
