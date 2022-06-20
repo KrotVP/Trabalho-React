@@ -1,23 +1,31 @@
-import { createContext, useState } from "react"
 
-export const DataContext = createContext(null)
+import { useState, createContext } from "react"
 
-export const stateContext = (props) => {
-    const [CPF, setCPF] = useState('')
+export const estadoContexto = {
+    CPF: "",
+    token: "",
+    role: ""
+};
+export const DataContext = createContext(null);
+
+export const Context = (props) => {
+    const [CPF, setCPF] = useState()
     const [token, setToken] = useState('')
     const [role, setRole] = useState('')
 
-    handleSetCPF = (e) => {
+    const handleSetCPF = (e) => {
         setCPF(e.target.value);
     }
-    handleSetToken = (e) => {
+    const handleSetToken = (e) => {
         setToken(e.target.value);
     }
-    handleSetRole = (e) => {
+    const handleSetRole = (e) => {
         setRole(e.target.value);
     }
 
     return (
         <DataContext.Provider value={{ CPF, setCPF, token, setToken, role, setRole }}>{props.children}</DataContext.Provider>
     )
+
 }
+
