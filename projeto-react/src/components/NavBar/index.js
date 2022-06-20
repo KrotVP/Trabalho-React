@@ -22,11 +22,14 @@ import { DataContext } from '../../context/data';
 
 
 
+
 const ResponsiveAppBar = () => {
+
   const { CPF } = useContext(DataContext)
   const history = useHistory();
   const pages = ['Produto', 'Pedido', 'Categoria'];
   const settings = [CPF, 'Login', 'Logout'];
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -124,7 +127,9 @@ const ResponsiveAppBar = () => {
             {pages.map((page) => (
               <Button
                 key={page}
+
                 onClick={() => history.push(`/${page}`)}
+
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
@@ -155,7 +160,9 @@ const ResponsiveAppBar = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
+
                 <MenuItem key={setting} onClick={() => history.push(`client/${setting}`)}>
+
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

@@ -1,3 +1,4 @@
+
 import { useState, createContext } from "react"
 
 export const estadoContexto = {
@@ -25,4 +26,6 @@ export const Context = (props) => {
     return (
         <DataContext.Provider value={{ CPF, setCPF, token, setToken, role, setRole }}>{props.children}</DataContext.Provider>
     )
+
 }
+
