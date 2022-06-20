@@ -4,7 +4,7 @@ import { API } from "../../services/api"
 import jwt_decode from "jwt-decode";
 
 
-import { DataContext } from "../../context";
+import { DataContext } from "../../context/data";
 
 export const Login = () => {
     const { setCPF, setToken, CPF, token, setRole, role } = useContext(DataContext)
