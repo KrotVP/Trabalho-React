@@ -31,7 +31,7 @@ const ResponsiveAppBar = () => {
   const { CPF } = useContext(DataContext)
   const history = useHistory();
 
-  const pages = ['Produtos', 'Pedidos', 'Categoria','Cadastro'];
+  const pages = ['Produtos','Cadastro', 'Carrinho'];
 
   const settings = [CPF, 'Login', 'Logout'];
 
@@ -132,9 +132,7 @@ const ResponsiveAppBar = () => {
             {pages.map((page) => (
               <Button
                 key={page}
-
                 onClick={() => history.push(`/${page}`)}
-
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
@@ -166,7 +164,7 @@ const ResponsiveAppBar = () => {
             >
               {settings.map((setting) => (
 
-                <MenuItem key={setting} onClick={() => history.push(`client/${setting}`)}>
+                <MenuItem key={setting} onClick={() => history.push(`${setting}`)}>
 
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
