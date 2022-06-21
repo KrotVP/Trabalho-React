@@ -9,7 +9,7 @@ import {useHistory} from 'react-router-dom';
 import {EditarCliente} from './EditarCliente';
 
 
-export const Cliente = (props) => {
+export const Client = (props) => {
   const history = useHistory();
 
   const [cliente, setcliente] = useState({
