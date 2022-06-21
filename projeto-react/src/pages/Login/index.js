@@ -47,11 +47,13 @@ export const Login = () => {
          
          
         }
+      
     useEffect(() => {
         if (storeToken && storeCPF && storeRole) {
             setToken(storeToken)
             const getDados = async () => {
                 if (storeRole ===("client")) {
+                    console.log("entrou")
                     const resposta = await API.get(`client/${storeCPF}`, { headers: { Authorization: storeToken } })
                     setCPF(storeCPF)
                     setUsuario(resposta.data)
@@ -64,6 +66,9 @@ export const Login = () => {
                     setCPF(storeCPF)
                     setUsuario(resposta.data)
                     setRole(storeRole)
+                    localStorage.setItem("Authorization",storeToken)
+                    localStorage.setItem("CPF",storeCPF)
+                    localStorage.setItem("Role",storeRole)
                 }
             }
 
@@ -94,6 +99,7 @@ export const Login = () => {
                     <Button type="submit" style={{ background: "green" }}>Enviar</Button>
                 </fieldset>
             </Form>
+            
         </>
 
     )

@@ -2,18 +2,18 @@ import * as React from 'react';
 import { Form, Button } from 'react-bootstrap'
 import { AdicionarH2 } from './styles';
 import { useForm } from 'react-hook-form';
-
+import { DataContext } from '../../../context/data';
 import { API } from '../../../services/api';
 
 
 export const CriarFuncionario = () => {
-
+  const {token} = React.useContext(DataContext)
   const { register, handleSubmit, reset} = useForm();
   const onSubmitAdd = async (data) => {
     reset();
     console.log(data);
     try{
-      await API.post(`/funcionario`, data)
+      await API.post(`/funcionario`, data,{headers:{Authorization:token}})
     } catch (error) {
       console.log(error.message)
       

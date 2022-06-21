@@ -22,7 +22,8 @@ export const Deletar = () => {
     console.log(data);
     reset();
     try{
-      await API.delete(`/categoria/Excluir`,data,{headers:{Authorization:token}})
+      console.log(token)
+      await API.delete(`categoria/${data.nome}`,data,{headers:{Authorization:token}})
       alert("Categoria deletada com sucesso")
     }catch(e){
       console.log(e.message);

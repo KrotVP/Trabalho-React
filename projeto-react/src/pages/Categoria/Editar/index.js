@@ -20,6 +20,8 @@ export const Editar = () => {
     resolver: yupResolver(validationPost)
   });
   const onSubmit = async (data) => {
+    const meuToken="Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzMzMzkzNzUwNi1mdW5jaW9uYXJpbzEtZnVuY2lvbmFyaW8iLCJleHAiOjE2NTYxOTQ0MDZ9.AoWLc_-Mfbp_V5ovmPBMCgHKn-ovnNfXkaaORFqhSRZ_wDedQ0CiPBDDzGI6Ydz1j9DF9Dbzn2whZRLILUVBig"
+
     console.log(data);
     const dados={
       nome:data.nomeNovo,
@@ -27,7 +29,8 @@ export const Editar = () => {
     }
     reset();
     try{
-      await API.put(`categoria/${data.nomeAntigo}`,dados,{headers:{Authorization:token}})
+      console.log()
+      await API.put(`categoria/${data.nomeAntigo}`,dados,{headers:{Authorization:meuToken}})
       alert("Categoria editada com sucesso!")
     }catch(e){
       console.log(e.message);

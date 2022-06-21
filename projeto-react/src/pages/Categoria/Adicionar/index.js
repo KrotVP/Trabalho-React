@@ -20,11 +20,12 @@ export const Adicionar = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm({
     resolver: yupResolver(validationPost)
   });
+  const meuToken="Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzMzMzkzNzUwNi1mdW5jaW9uYXJpbzEtZnVuY2lvbmFyaW8iLCJleHAiOjE2NTYxOTQ0MDZ9.AoWLc_-Mfbp_V5ovmPBMCgHKn-ovnNfXkaaORFqhSRZ_wDedQ0CiPBDDzGI6Ydz1j9DF9Dbzn2whZRLILUVBig"
   const onSubmitAdd = async (data) => {
     reset();
     console.log(data);
     try{
-     const response=await API.post(`/categoria`, data, {headers:{Authorization:token}})
+     const response=await API.post(`/categoria`, data, {headers:{Authorization:meuToken}})
        alert("Categoria adicionado com sucesso");
     } catch (error) {
       alert(error.message)

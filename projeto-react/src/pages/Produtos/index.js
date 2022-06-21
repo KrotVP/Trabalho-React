@@ -9,18 +9,19 @@ import { DivProduto } from "./styles"
 
 
 export const Produtos = () => {
+    const {token}=useContext(DataContext)
     const [listagem,setListagem]=useState([{}])
     const history = useHistory()
-    const tokenMeu="	Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0NjAwMzYzNzAxMy1BbmRyZS1jbGllbnQiLCJleHAiOjE2NTYxMjg5Mjh9.GhvC69j_XSeQkACLYRhyMdYVd0imiwYE5-J7DVGYNaXxNF-bfbJX1ztszWAlGFiciMxyDWeqzLcpLL86qrFe2Q"
     useEffect(()=>{
+        if(token){
         const getProdutos=async () => {
             console.log("entrou");
-            const lista= await API.get(`produto`,{headers:{Authorization:tokenMeu}})
+            const lista= await API.get(`produto`,{headers:{Authorization:token}})
             setListagem(lista.data)
             console.log(listagem)
         }
         getProdutos()
-    },[])
+    }},[])
     return (
     <div>
         <header>
@@ -30,7 +31,7 @@ export const Produtos = () => {
         <Grid  container minWidth={"300px"} >
             {listagem.map((produto)  =>{
            return(
-                <Grid item md={3} lg={4} xl={4}>
+                <Grid item md={4} lg={4} xl={4}>
              <Card
             nome={produto.nome}
             preco={produto.preco}

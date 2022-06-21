@@ -21,6 +21,7 @@ export const ListaPedido = () => {
     useEffect(()=>{
         const getPedidos=async () => {
             console.log("entrou");
+            console.log(token, "*")
             const listagem= await API.get(`pedido`,{headers:{Authorization:token}})
             setLista(listagem.data)
         }
@@ -34,29 +35,31 @@ export const ListaPedido = () => {
             <Table striped bordered hover variant="dark">
                 <thead>
                     <tr>
-                        <th>id</th>
+                        <th>CPF</th>
                         <th>Numero do Pedido</th>
-                        <th>Data do Pedido</th>
+                        <th>Data da Entrega</th>
                         <th>Valor Total</th>
+                        <th>Finalizado</th>
                     </tr>
                 </thead>
                 {
                     list.map((item) => {
-                        
                         return (
                             <>
 
 
                                 <tbody>
                                     <tr>
-                                        <td>{item.id}</td>
-                                        <td>{item.numeroPedido}</td>
-                                        <td>{item.dataPedido}</td>
-                                        <td>{item.valorTotal}</td>
+                                        <td>{item.cpf}</td>
+                                        <td>{item.numeroDoPedido}</td>
+                                        <td>{item.dataDaEntrega}</td>
+                                        <td>{item.valorTotalDoPedido}</td>
+                                        <td>{item.finalizado}</td>
                                         <Botao nome="Deletar"  color= "error" onClick = {()=> handleDelete(item.numeroPedido)}/>
                                     </tr>
                                     
                                 </tbody>
+
                                 
                             </>
                         )
