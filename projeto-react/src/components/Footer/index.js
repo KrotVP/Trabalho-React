@@ -19,7 +19,7 @@ export default function Footer() {
                                 </Link>
                             </Box>
                             <Box>
-                                <Link href="/produto" color="inherit">
+                                <Link href="/categoria/editar" color="inherit">
                                     Lista de Categorias
                                 </Link>
                             </Box>
@@ -41,7 +41,7 @@ export default function Footer() {
 
                     </Grid>
                     <Box textAlign="center" pt={{ xs: 5, sm: 10 }} pb={{ xs: 5, sm: 0 }}>
-                        E-Commerce nome aqui &reg;{new Date().getFullYear}
+                         IDEIAS AVANCADAS .LTDA &reg;{new Date().getFullYear}
                     </Box>
                 </Container>
             </Box>
