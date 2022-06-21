@@ -24,10 +24,12 @@ export const ListaPedido = () => {
             console.log(token, "*")
             const listagem= await API.get(`pedido`,{headers:{Authorization:token}})
             setLista(listagem.data)
+        
         }
         getPedidos()
     },[])
 
+   
     console.log(numeroPedidoDelete);
     return (
         <>
