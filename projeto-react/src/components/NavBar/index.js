@@ -164,7 +164,7 @@ const ResponsiveAppBar = () => {
             >
               {settings.map((setting) => (
 
-                <MenuItem key={setting} onClick={() => history.push(`${setting}`)}>
+                <MenuItem key={setting} onClick={() => history.push(`/${setting}`)}>
 
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
