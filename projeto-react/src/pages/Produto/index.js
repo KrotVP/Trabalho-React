@@ -1,15 +1,17 @@
+import { Grid } from "@mui/material";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Card from "../../components/Card"
-import { Grid } from "@mui/material"
-import { DivProduto } from "../Produtos/styles"
-import { useEffect,useState } from "react";
+import { default as Botao } from "../../components/Botao";
+import Card from "../../components/Card";
 import { API } from "../../services/api";
-import { H1Produto, H2Produto,precoProduto } from "./styles";
-import { default as Botao} from "../../components/Botao"
+import { DivProduto } from "../Produtos/styles";
+import { H1Produto, H2Produto } from "./styles";
+import {useHistory} from 'react-router-dom';
 
 
 const tokenMeu="	Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0NjAwMzYzNzAxMy1BbmRyZS1jbGllbnQiLCJleHAiOjE2NTYxMjg5Mjh9.GhvC69j_XSeQkACLYRhyMdYVd0imiwYE5-J7DVGYNaXxNF-bfbJX1ztszWAlGFiciMxyDWeqzLcpLL86qrFe2Q"
 export const Produto = ()=>{
+    const history = useHistory();
     const {nome}=useParams()
     const [produto,setProduto]=useState({})
 useEffect(()=>{
@@ -36,7 +38,8 @@ useEffect(()=>{
                 <H1Produto>{produto.nome}</H1Produto>
                 <H2Produto>{produto.descricao}</H2Produto>
                 <precoProduto>{produto.preco}</precoProduto>
-                <Botao nome="Comprar" color="success">Comprar</Botao>
+                <Botao nome="Comprar" color="success"></Botao>
+                <Botao nome="Editar" color="warning" onClick = {()=> history.push("/produto/editar")}></Botao>
                  </Grid>
         </Grid>
         </DivProduto>  

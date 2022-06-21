@@ -1,6 +1,8 @@
 import styles from'./Home.module.css'
 import NavBar from'../../components/Layout/Navbar'
-function Home(){
+
+
+export const Home = ()=>{
 return(
     <section >
        
@@ -24,4 +26,3 @@ return(
 )
 
 }
-export default Home
