@@ -25,7 +25,9 @@ export const ListaFuncionarios = () => {
             setLista(listagem.data)
         }
         getFuncionarios()
+        getFuncionarios()
     },[])
+   
     console.log(cpfDelete);
     return (
         <>

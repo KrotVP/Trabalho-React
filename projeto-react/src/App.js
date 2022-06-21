@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import { Context } from "./context/data";
 import { Login } from "./pages/Login";
 import { default as NotFound } from "./pages/NotFound";
-import { default as Home } from "./pages/Home";
+import { Home } from "./pages/Home";
 import { Categoria } from "./pages/Categoria";
 import { Endereco } from "./pages/Endereco";
 import { ListaFuncionarios } from './pages/FuncionarioIndividual/ListaFuncionarios';
@@ -17,6 +17,8 @@ import { Cadastro } from './pages/Cadastro'
 import { Produtos } from './pages/Produtos'
 import { Produto } from './pages/Produto'
 import { LogOut } from './pages/LogOut'
+import {EditarProduto} from "./pages/Produto/EditarProduto"
+import {Carrinho} from "./pages/Carrinho"
 
 
 function App() {
@@ -38,7 +40,7 @@ function App() {
             <Route path="/Produtos" component={Produtos} exact />
             <Route path="/produto/:nome" component={Produto} exact />
             <Route path="/logout" component={LogOut} exact />
-            <Route path="/produto/editar/:nome" component={ProdutoEdicao} exact />
+            <Route path="/produto/editar/:nome" component={EditarProduto} exact />
             <Route path="/carrinho" component={Carrinho} exact />
             <Route path="/" component={Home} exact />
             <Route path="/*" component={NotFound} />

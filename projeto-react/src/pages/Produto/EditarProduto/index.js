@@ -5,16 +5,19 @@ import { AdicionarH2 } from './styles';
 import { useForm } from 'react-hook-form';
 
 import { API } from '../../../services/api';
+import { useParams } from 'react-router-dom';
+import { DataContext } from '../../../context/data';
 
 
 export const EditarProduto = () => {
-
+  const {nome}= useParams()
+  const {token}=React.useContext(DataContext)
   const { register, handleSubmit, reset} = useForm();
   const onSubmitAdd = async (data) => {
     reset();
     console.log(data);
     try{
-      await API.put(`/funcionario`, data)
+      await API.put(`/produto/${nome}`, data, {headers:{Authorization:token}})
     } catch (error) {
       console.log(error.message)
       
