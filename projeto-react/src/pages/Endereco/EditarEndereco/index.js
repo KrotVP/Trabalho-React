@@ -32,7 +32,7 @@ export const EditarEndereco = () => {
     <>
       <Form onSubmit={handleSubmit(onSubmitAdd)}>
         <AdicionarH2>Editar Endereco</AdicionarH2>
-        <fieldset style={{ border: "1px solid green" }}>
+        <fieldset style={{ border: "1px solid yellow" }}>
        
           <Form.Group className="mb-3">
             <Form.Label>Cep</Form.Label>
@@ -40,29 +40,13 @@ export const EditarEndereco = () => {
            
           </Form.Group>
         
-          {/* <Form.Group className="mb-3" >
-            <Form.Label>Rua</Form.Label>
-            <Form.Control type="text" placeholder="São Sebastião" name="rua" {...register("rua")} />
-            
-          </Form.Group>
-
-          <Form.Group className="mb-3" >
-            <Form.Label>Cidade</Form.Label>
-            <Form.Control type="text" placeholder="" name="cidade" {...register("cidade")} />
-          
-          </Form.Group> */}
-        
+             
           <Form.Group className="mb-3">
             <Form.Label>Numero</Form.Label>
             <Form.Control type="text" placeholder="" name="numero"{...register("numero")} />
            
           </Form.Group>
 
-          {/* <Form.Group className="mb-3" >
-            <Form.Label>Bairro</Form.Label>
-            <Form.Control type="text" placeholder="Ex: Mosela" name="bairro" {...register("bairro")} />
-            
-          </Form.Group> */}
 
           <Form.Group className="mb-3" >
             <Form.Label>Complemento</Form.Label>
@@ -70,13 +54,9 @@ export const EditarEndereco = () => {
           
           </Form.Group>
 
-          {/* <Form.Group className="mb-3" >
-            <Form.Label>Estado</Form.Label>
-            <Form.Control type="text" placeholder="" name="estado" {...register("estado")} />
          
-          </Form.Group> */}
        
-          <Button type="submit" style={{ background: "green" }} >Editar</Button>
+          <Button type="submit" style={{ background: "yellow", color:"black" }} >Editar</Button>
         </fieldset>
 
         

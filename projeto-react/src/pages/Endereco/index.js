@@ -1,29 +1,20 @@
-//import React from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import Botao from '../../components/Botao/index'
 import { useState } from 'react';
 import './styles.css';
-
-
-import { EditarEndereco } from './EditarEndereco';
+import {useHistory} from 'react-router-dom';
 
 export const Endereco = (props) => {
-  /*
-    cep: '',
-      rua: '',
-      Bairro:'',
-      cidade:'',
-      numero:'',
-      complemento:'',
-      Estado:''
-  */
-
-  const endereco = [{
-    nome: 'João',
+  const history = useHistory();
+  
+  
+  const [endereco, setEndereco] = useState ([{
+    nome: props.location.state.text,
     cep: 'a',
     rua: 'a',
     Bairro: 'a',
@@ -41,7 +32,7 @@ export const Endereco = (props) => {
     numero: 'b',
     complemento: 'b',
     Estado: 'b'
-  }]
+  }])
   return (
     <>
       {
@@ -166,7 +157,7 @@ export const Endereco = (props) => {
               </Box>
               <Stack spacing={2} direction="row">
                 <Button style={{ panding: "100px" }} size="large" color="error" variant="contained" startIcon={<DeleteIcon />} >Deletar</Button>
-               <Button style={{ panding: "100px" }} size="large" color="warning" variant="contained" >Editar</Button>
+                <Botao nome="Editar" color="warning" onClick = {()=> history.push("/endereco/editar")} ></Botao>
               </Stack>
 
 
