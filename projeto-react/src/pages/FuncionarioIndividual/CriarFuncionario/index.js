@@ -1,5 +1,4 @@
 import * as React from 'react';
-import './styles.css';
 import { Form, Button } from 'react-bootstrap'
 import { AdicionarH2 } from './styles';
 import { useForm } from 'react-hook-form';
@@ -7,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { API } from '../../../services/api';
 
 
-export const EditarFuncionario = () => {
+export const CriarFuncionario = () => {
 
   const { register, handleSubmit, reset} = useForm();
   const onSubmitAdd = async (data) => {
@@ -28,8 +27,8 @@ export const EditarFuncionario = () => {
 
     <>
       <Form onSubmit={handleSubmit(onSubmitAdd)}>
-        <AdicionarH2>Editar Funcionario</AdicionarH2>
-        <fieldset style={{ border: "1px solid yellow" }}>
+        <AdicionarH2>Criar Funcionario</AdicionarH2>
+        <fieldset style={{ border: "1px solid green" }}>
        
           <Form.Group className="mb-3">
             <Form.Label>Nome</Form.Label>
@@ -51,13 +50,13 @@ export const EditarFuncionario = () => {
         
           <Form.Group className="mb-3">
             <Form.Label>Data de Nascimento</Form.Label>
-            <Form.Control type="text" placeholder="Ex:1981-07-17" name="nascimento"{...register("nascimento")} />
+            <Form.Control type="text" placeholder="Ex:1981-07-17" name="dataDenascimento"{...register("dataDeNascimento")} />
         
           </Form.Group>
 
           
        
-          <Button type="submit" style={{ background: "yellow", color:'black' }} >Editar</Button>
+          <Button type="submit" style={{ background: "green" }} >Criar</Button>
         </fieldset>
 
         

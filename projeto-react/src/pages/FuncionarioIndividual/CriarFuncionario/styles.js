@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
 export const AdicionarH2 = styled.h2`   
-    color:yellow;
+    color:green;
   }
 `;
