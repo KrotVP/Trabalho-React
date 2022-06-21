@@ -11,6 +11,7 @@ const Card = (props) => {
                     height="10%"
                     image={props.image}
                     alt={props.nome}
+                    onClick={props.onClick}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">

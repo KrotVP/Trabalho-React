@@ -13,7 +13,7 @@ export const CriarFuncionario = () => {
     reset();
     console.log(data);
     try{
-      await API.put(`/funcionario`, data)
+      await API.post(`/funcionario`, data)
     } catch (error) {
       console.log(error.message)
       

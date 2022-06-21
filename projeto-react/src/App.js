@@ -8,11 +8,14 @@ import {default as NotFound} from "./pages/NotFound";
 import{default as Home } from "./pages/Home";
 import{Categoria} from "./pages/Categoria";
 import {Endereco} from "./pages/Endereco";
-import {FuncionarioIndividual as Funcionario} from './pages/FuncionarioIndividual';
 import{ListaFuncionarios} from './pages/FuncionarioIndividual/ListaFuncionarios';
 import {ListaPedido} from "./pages/ListaPedido";
-import {Cliente} from "./pages/Cliente";
+import {Client} from "./pages/Client";
 import {EditarEndereco} from "./pages/Endereco/EditarEndereco";
+import {FuncionarioIndividual as Funcionario} from './pages/FuncionarioIndividual'
+import {Cadastro} from './pages/Cadastro'
+import {Produtos} from './pages/Produtos'
+import {Produto} from './pages/Produto'
 
 
 function App() {
@@ -29,13 +32,13 @@ function App() {
             <Route path="/funcionario" component={Funcionario} exact/>
             <Route path="/funcionario/lista" component={ListaFuncionarios} exact/>
             <Route path="/pedido/lista" component={ListaPedido} exact/>
-            <Route path="/cliente" component= {Cliente} exact /> 
-      {/*<Route path="/cadastro" component={Cadastro} exact/>
-      <Route path="/client" component= {Client} exact /> 
-      <Route path="/produto" component= {Produto} exact/>
-      <Route path="/produto/{nome}" component={ProdutoNome} exact/> 
-      <Route path="/produto/editar/{nome}" component={ProdutoEdicao} exact/>
-      <Route path="/produto/categoria" component={Categorias} exact/>
+            <Route path="/client" component= {Client} exact /> 
+            <Route path="/cadastro" component={Cadastro} exact/>
+            <Route path="/Produtos" component= {Produtos} exact/>
+            <Route path="/produto/:nome" component={Produto} exact/> 
+          {/*<Route path="/client" component= {Client} exact /> 
+          <Route path="/produto/editar/{nome}" component={ProdutoEdicao} exact/>
+          <Route path="/produto/categoria" component={Categorias} exact/>
       
       
       <Route path="/cadastro/funcionario" component={CriacaoFuncionario} exact/>
