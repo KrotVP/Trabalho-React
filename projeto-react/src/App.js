@@ -8,7 +8,12 @@ import {default as NotFound} from "./pages/NotFound";
 import{Home} from "./pages/Home";
 import{Categoria} from "./pages/Categoria";
 import {Endereco} from "./pages/Endereco";
-import {FuncionarioIndividual as Funcionario} from './pages/FuncionarioIndividual'
+import {FuncionarioIndividual as Funcionario} from './pages/FuncionarioIndividual';
+import{ListaFuncionarios} from './pages/FuncionarioIndividual/ListaFuncionarios';
+import {ListaPedido} from "./pages/ListaPedido";
+import {Cliente} from "./pages/Cliente";
+import {EditarEndereco} from "./pages/Endereco/EditarEndereco";
+
 
 function App() {
   return(
@@ -20,7 +25,11 @@ function App() {
             <Route path="/login" component={Login} exact/>
             <Route path="/categoria/editar" component={Categoria} exact/>
             <Route path="/endereco" component={Endereco} exact/>
+            <Route path="/endereco/editar" component={EditarEndereco} exact/>
             <Route path="/funcionario" component={Funcionario} exact/>
+            <Route path="/funcionario/lista" component={ListaFuncionarios} exact/>
+            <Route path="/pedido/lista" component={ListaPedido} exact/>
+            <Route path="/cliente" component= {Cliente} exact /> 
       {/*<Route path="/cadastro" component={Cadastro} exact/>
       <Route path="/client" component= {Client} exact /> 
       <Route path="/produto" component= {Produto} exact/>
@@ -31,9 +40,9 @@ function App() {
       
       <Route path="/cadastro/funcionario" component={CriacaoFuncionario} exact/>
       
-      <Route path="/funcionario/lista" component={ListaFuncionarios} exact/>
+      
       <Route path="/carrinho" component={Carrinho} exact/>
-      <Route path="/pedido" component={Pedidos} exact/>*/}
+      */}
       <Route path="/" component={Home} exact/>
       <Route path="/*" component={NotFound} />  
         </Switch>

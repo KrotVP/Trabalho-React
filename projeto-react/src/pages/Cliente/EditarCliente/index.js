@@ -7,14 +7,14 @@ import { useForm } from 'react-hook-form';
 import { API } from '../../../services/api';
 
 
-export const EditarFuncionario = () => {
+export const EditarCliente = () => {
 
   const { register, handleSubmit, reset} = useForm();
   const onSubmitAdd = async (data) => {
     reset();
     console.log(data);
     try{
-      await API.put(`/funcionario`, data)
+      await API.put(`/client`, data)
     } catch (error) {
       console.log(error.message)
       
@@ -28,7 +28,7 @@ export const EditarFuncionario = () => {
 
     <>
       <Form onSubmit={handleSubmit(onSubmitAdd)}>
-        <AdicionarH2>Editar Funcionario</AdicionarH2>
+        <AdicionarH2>Editar Cliente</AdicionarH2>
         <fieldset style={{ border: "1px solid yellow" }}>
        
           <Form.Group className="mb-3">
