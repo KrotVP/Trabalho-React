@@ -27,7 +27,7 @@ const ResponsiveAppBar = () => {
 
   const { CPF } = useContext(DataContext)
   const history = useHistory();
-  const pages = ['Produto', 'Pedido', 'Categoria'];
+  const pages = ['Produtos', 'Pedidos', 'Categoria'];
   const settings = [CPF, 'Login', 'Logout'];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
