@@ -5,17 +5,20 @@ import Footer from './components/Footer';
 import {Context} from "./context/data";
 import {Login} from "./pages/Login";
 import {default as NotFound} from "./pages/NotFound";
-import{default as Home } from "./pages/Home";
 import{Categoria} from "./pages/Categoria";
 import {Endereco} from "./pages/Endereco";
 import{ListaFuncionarios} from './pages/FuncionarioIndividual/ListaFuncionarios';
 import {ListaPedido} from "./pages/ListaPedido";
 import {Client} from "./pages/Client";
 import {EditarEndereco} from "./pages/Endereco/EditarEndereco";
-import {FuncionarioIndividual as Funcionario} from './pages/FuncionarioIndividual'
-import {Cadastro} from './pages/Cadastro'
-import {Produtos} from './pages/Produtos'
-import {Produto} from './pages/Produto'
+import {FuncionarioIndividual as Funcionario} from './pages/FuncionarioIndividual';
+import {Cadastro} from './pages/Cadastro';
+import {Produtos} from './pages/Produtos';
+import {Produto} from './pages/Produto';
+import {EditarProduto} from './pages/Produto/EditarProduto';
+import {Home} from './pages/Home';
+import {Carrinho} from './pages/Carrinho';
+
 
 
 function App() {
@@ -35,7 +38,12 @@ function App() {
             <Route path="/client" component= {Client} exact /> 
             <Route path="/cadastro" component={Cadastro} exact/>
             <Route path="/Produtos" component= {Produtos} exact/>
+            <Route path="/produto/editar" component={EditarProduto} exact/>
             <Route path="/produto/:nome" component={Produto} exact/> 
+            <Route path="/carrinho" component={Carrinho} exact/> 
+            
+            <Route path="/" component={Home} exact/>
+            
           {/*<Route path="/client" component= {Client} exact /> 
           <Route path="/produto/editar/{nome}" component={ProdutoEdicao} exact/>
           <Route path="/produto/categoria" component={Categorias} exact/>
