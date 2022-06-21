@@ -31,11 +31,14 @@ export const Login = () => {
                 reset();
                 try {
                     const response = await API.post(`/login`, data)
-                    const decoded = jwt_decode(response.headers.authorization)
+                    const header= response.headers.authorization
+                    const decoded = jwt_decode(header)
                     setStoreCPF(decoded.sub?.split("-")[0])
                     setStoreToken(response.headers.authorization)
                     setStoreRole(decoded.sub?.split("-")[2])
-                    console.log("logou")
+                    localStorage.setItem("Authorization",header)
+                    localStorage.setItem("CPF",storeCPF)
+                    localStorage.setItem("Role",storeRole)
 
                 } catch (error) {
                     console.log(error.message)

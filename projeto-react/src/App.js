@@ -8,7 +8,6 @@ import {default as NotFound} from "./pages/NotFound";
 import{Home} from "./pages/Home";
 import{Categoria} from "./pages/Categoria";
 import {Endereco} from "./pages/Endereco";
-import {FuncionarioIndividual as Funcionario} from './pages/FuncionarioIndividual';
 import{ListaFuncionarios} from './pages/FuncionarioIndividual/ListaFuncionarios';
 import {ListaPedido} from "./pages/ListaPedido";
 import {Client} from "./pages/Client";
@@ -37,9 +36,9 @@ function App() {
             <Route path="/cadastro" component={Cadastro} exact/>
             <Route path="/Produtos" component= {Produtos} exact/>
             <Route path="/produto/:nome" component={Produto} exact/> 
-      {/*<Route path="/client" component= {Client} exact /> 
-      <Route path="/produto/editar/{nome}" component={ProdutoEdicao} exact/>
-      <Route path="/produto/categoria" component={Categorias} exact/>
+          {/*<Route path="/client" component= {Client} exact /> 
+          <Route path="/produto/editar/{nome}" component={ProdutoEdicao} exact/>
+          <Route path="/produto/categoria" component={Categorias} exact/>
       
       
       <Route path="/cadastro/funcionario" component={CriacaoFuncionario} exact/>

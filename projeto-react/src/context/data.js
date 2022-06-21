@@ -1,5 +1,5 @@
 
-import { useState, createContext } from "react"
+import { useState, createContext,useEffect } from "react"
 
 export const estadoContexto = {
     CPF: "",
@@ -22,6 +22,14 @@ export const Context = (props) => {
     const handleSetRole = (e) => {
         setRole(e.target.value);
     }
+
+    useEffect(() => {
+        if(localStorage.getItem('Authorization')) {
+          setToken(localStorage.getItem("Authorization"));
+          setRole(localStorage.getItem("Role"))
+          setCPF(localStorage.getItem("CPF"))
+        }
+      }, []);
 
     return (
         <DataContext.Provider value={{ CPF, setCPF, token, setToken, role, setRole }}>{props.children}</DataContext.Provider>
