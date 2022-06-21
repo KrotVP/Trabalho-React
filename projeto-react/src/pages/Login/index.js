@@ -27,40 +27,48 @@ export const Login = () => {
         resolver: yupResolver(validationPost)
     });
     const onSubmitAdd = async (data) => {
-        if (!CPF) {       
+             
                 reset();
                 try {
                     const response = await API.post(`/login`, data)
                     const header= response.headers.authorization
                     const decoded = jwt_decode(header)
+                    console.log(decoded)
                     setStoreCPF(decoded.sub?.split("-")[0])
                     setStoreToken(response.headers.authorization)
                     setStoreRole(decoded.sub?.split("-")[2])
-                    localStorage.setItem("Authorization",header)
-                    localStorage.setItem("CPF",storeCPF)
-                    localStorage.setItem("Role",storeRole)
+                    console.log(storeCPF)
+                    console.log(storeRole)
+                  
 
                 } catch (error) {
                     console.log(error.message)
                 }
-        } else {
-            console.log("Você já está logado!")
+         
+         
         }
-    }
+      
     useEffect(() => {
         if (storeToken && storeCPF && storeRole) {
             setToken(storeToken)
             const getDados = async () => {
                 if (storeRole ===("client")) {
+                    console.log("entrou")
                     const resposta = await API.get(`client/${storeCPF}`, { headers: { Authorization: storeToken } })
                     setCPF(storeCPF)
                     setUsuario(resposta.data)
                     setRole(storeRole)
+                    localStorage.setItem("Authorization",storeToken)
+                    localStorage.setItem("CPF",storeCPF)
+                    localStorage.setItem("Role",storeRole)
                 } else {
                     const resposta = await API.get(`funcionario/${storeCPF}`, { headers: { Authorization: storeToken } })
                     setCPF(storeCPF)
                     setUsuario(resposta.data)
                     setRole(storeRole)
+                    localStorage.setItem("Authorization",storeToken)
+                    localStorage.setItem("CPF",storeCPF)
+                    localStorage.setItem("Role",storeRole)
                 }
             }
 
@@ -91,7 +99,8 @@ export const Login = () => {
                     <Button type="submit" style={{ background: "green" }}>Enviar</Button>
                 </fieldset>
             </Form>
+            
         </>
 
     )
-}
+    }
