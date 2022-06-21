@@ -5,16 +5,18 @@ import { AdicionarH2 } from './styles';
 import { useForm } from 'react-hook-form';
 
 import { API } from '../../../services/api';
+import { DataContext } from '../../../context/data';
 
 
 export const EditarCliente = () => {
-
+  const {cpf} = React.useContext(DataContext)
   const { register, handleSubmit, reset} = useForm();
   const onSubmitAdd = async (data) => {
     reset();
     console.log(data);
     try{
-      await API.put(`/client`, data)
+      await API.put(`/client/${cpf}`, data)
+      alert("Client criado com sucesso!")
     } catch (error) {
       console.log(error.message)
       

@@ -30,7 +30,7 @@ export const Produtos = () => {
         <Grid  container minWidth={"300px"} >
             {listagem.map((produto)  =>{
            return(
-                <Grid item md={4} lg={4} xl={3}>
+                <Grid item md={3} lg={4} xl={4}>
              <Card
             nome={produto.nome}
             preco={produto.preco}

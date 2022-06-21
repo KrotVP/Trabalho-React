@@ -39,11 +39,8 @@ function App() {
           {/*<Route path="/client" component= {Client} exact /> 
           <Route path="/produto/editar/{nome}" component={ProdutoEdicao} exact/>
           <Route path="/produto/categoria" component={Categorias} exact/>
-      
-      
       <Route path="/cadastro/funcionario" component={CriacaoFuncionario} exact/>
-      
-      
+    
       <Route path="/carrinho" component={Carrinho} exact/>
       */}
       <Route path="/" component={Home} exact/>

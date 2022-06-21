@@ -9,7 +9,7 @@ export const estadoContexto = {
 export const DataContext = createContext(null);
 
 export const Context = (props) => {
-    const [CPF, setCPF] = useState()
+    const [CPF, setCPF] = useState('')
     const [token, setToken] = useState('')
     const [role, setRole] = useState('')
 
@@ -24,9 +24,13 @@ export const Context = (props) => {
     }
 
     useEffect(() => {
-        if(localStorage.getItem('Authorization')) {
+        if(localStorage.getItem("Authorization")){
           setToken(localStorage.getItem("Authorization"));
+        }
+        if(localStorage.getItem("Role")){
           setRole(localStorage.getItem("Role"))
+        }
+        if(localStorage.getItem("CPF")){
           setCPF(localStorage.getItem("CPF"))
         }
       }, []);

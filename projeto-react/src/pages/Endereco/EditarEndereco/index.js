@@ -17,7 +17,7 @@ export const EditarEndereco = () => {
     reset();
     console.log(data);
     try{
-      await API.post(`/endereco`, data)
+      await API.put(`/endereco/${data.nome}`, data)
     } catch (error) {
       console.log(error.message)
       
@@ -53,6 +53,13 @@ export const EditarEndereco = () => {
             <Form.Control type="text" placeholder="" name="complemento" {...register("complemento")} />
           
           </Form.Group>
+
+          <Form.Group className="mb-3" >
+            <Form.Label>Nome</Form.Label>
+            <Form.Control type="text" placeholder="" name="Nome" {...register("nome")} />
+          
+          </Form.Group>
+
 
          
        

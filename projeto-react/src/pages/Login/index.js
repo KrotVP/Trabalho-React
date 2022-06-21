@@ -27,26 +27,26 @@ export const Login = () => {
         resolver: yupResolver(validationPost)
     });
     const onSubmitAdd = async (data) => {
-        if (!CPF) {       
+             
                 reset();
                 try {
                     const response = await API.post(`/login`, data)
                     const header= response.headers.authorization
                     const decoded = jwt_decode(header)
+                    console.log(decoded)
                     setStoreCPF(decoded.sub?.split("-")[0])
                     setStoreToken(response.headers.authorization)
                     setStoreRole(decoded.sub?.split("-")[2])
-                    localStorage.setItem("Authorization",header)
-                    localStorage.setItem("CPF",storeCPF)
-                    localStorage.setItem("Role",storeRole)
+                    console.log(storeCPF)
+                    console.log(storeRole)
+                  
 
                 } catch (error) {
                     console.log(error.message)
                 }
-        } else {
-            console.log("Você já está logado!")
+         
+         
         }
-    }
     useEffect(() => {
         if (storeToken && storeCPF && storeRole) {
             setToken(storeToken)
@@ -56,6 +56,9 @@ export const Login = () => {
                     setCPF(storeCPF)
                     setUsuario(resposta.data)
                     setRole(storeRole)
+                    localStorage.setItem("Authorization",storeToken)
+                    localStorage.setItem("CPF",storeCPF)
+                    localStorage.setItem("Role",storeRole)
                 } else {
                     const resposta = await API.get(`funcionario/${storeCPF}`, { headers: { Authorization: storeToken } })
                     setCPF(storeCPF)
@@ -94,4 +97,4 @@ export const Login = () => {
         </>
 
     )
-}
+    }

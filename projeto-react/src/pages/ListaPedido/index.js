@@ -1,29 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Table} from 'react-bootstrap';
 import Botao from '../../components/Botao/index';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { EditarH1 } from './styles';
 import {useHistory} from 'react-router-dom';
+import { DataContext } from '../../context/data';
+import { API } from '../../services/api';
 
 export const ListaPedido = () => {
+    const {token} = useContext(DataContext)
     const history = useHistory();
-    const [list, setLista] = useState([{
-        id: 1,
-        numeroPedido: 23,
-        dataPedido: "10-12-2021",
-        valorTotal: 1223.90
-    }, {
-        id: 2,
-        numeroPedido: 24,
-        dataPedido: "10-12-2021",
-        valorTotal: 1324.98
-    }]);
+    const [list, setLista] = useState([{}])
 
     const [numeroPedidoDelete, setNumeroPedidoDelete] = useState('');
 
     const handleDelete = (e)=>{
         setNumeroPedidoDelete(e);
     }
+
+    useEffect(()=>{
+        const getPedidos=async () => {
+            console.log("entrou");
+            const listagem= await API.get(`pedido`,{headers:{Authorization:token}})
+            setLista(listagem.data)
+        }
+        getPedidos()
+    },[])
+
     console.log(numeroPedidoDelete);
     return (
         <>
